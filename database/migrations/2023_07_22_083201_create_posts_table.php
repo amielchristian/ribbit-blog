@@ -11,12 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('posts', function (Blueprint $table) {
-            $table->id();
-            $table->string('poster');
-            $table->file('markdown-contents');
-            $table->timestamps();
-        });
+        Schema::drop('post');
     }
 
     /**
