@@ -13,7 +13,7 @@ class PostController extends Controller
     }
 
     public function store(Request $request) {
-        $request->validate(["title" => "required|max:255", "author" => "required|max:255", "content" => "required|max:65535"]);
+        $request->validate(["title" => "required|max:64", "author" => "required|max:64", "content" => "required"]);
         Task::create(["title" => $request->title, "author" => $request->author, "content" => $request->content]);
 
         return redirect()->route("index");
@@ -22,5 +22,10 @@ class PostController extends Controller
     public function destroy(Task $task) {
         $task -> delete();
         return redirect() -> route("index");
+    }
+
+    public function specificPost($postID)   {
+        $post = Post::latest()->where('id', $postID)->first();
+        return view('post', compact('post'));
     }
 }

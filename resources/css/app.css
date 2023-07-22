@@ -30,7 +30,10 @@ body    {
     gap: 1%;
 }
 
-.post-container {
+a.post-container {
+    color: initial;
+    text-decoration: initial;
+
     background-color: #f8f9fa;
     border: 1px solid #c1c1c1;
     padding: 10px;

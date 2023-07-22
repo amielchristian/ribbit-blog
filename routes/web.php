@@ -21,3 +21,5 @@ Route::get('/', [PostController::class, 'index'])->name('index');
 Route::get('create-post', function () {
     return view('create-post');
 });
+Route::get('post/{postID}', [PostController::class, 'specificPost']);
+Route::get('post/{postID}', [PostController::class, 'specificPost']);
