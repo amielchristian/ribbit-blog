@@ -1,63 +1,102 @@
+/* GENERAL */
+.content-container  {
+    display: flex;
+    justify-content: center;
+    margin-top: 1in;
+}
+.content-container > div    {
+    width: 80%;
+}
+
+/* LAYOUT */
 .navbar > a {
     color: #66757f;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
-
 .navbar a:hover {
     color: #00cf6b;
+    text-decoration: initial;
 }
-
 .navbar {
+    padding-left: 10%;
+    padding-right: 10%;
     filter: drop-shadow(0px 1px 1px #c1c1c1);
 }
-
 .navcontainer   {
     text-align: right;
 }
-
 body    {
     background-color: #e2eee2;
     font-family: Figtree, sans-serif;
 }
 
+/* HOMEPAGE */
 .post-grid    {
     display: grid;
-    margin: 1in 2in;
     grid-template-columns: 33% 33% 33%;
     grid-auto-rows: 200px;
     gap: 1%;
 }
-
 a.post-container {
     color: initial;
     text-decoration: initial;
 
     background-color: #f8f9fa;
     border: 1px solid #c1c1c1;
-    padding: 10px;
+    padding: 15px;
+    overflow: hidden;
 }
 .post-title {
-    max-lines: 2;
+    font-size: larger;
+    font-weight: bold;
+    line-clamp: 2;
+    height: 2.5em;
+    overflow: hidden;
 }
 .post-misc  {
+    font-size: smaller;
     color: #66757f;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
-.post-text  {
-    height: 66%;
+.post-author    {
+    max-width: 60%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
-
-hr  {
+.post-container hr  {
     margin: 1%;
 }
-
 .truncate-overflow  {
     position: relative;
-    max-height: 100%;
+    max-height: 6em;
     overflow: hidden;
-    padding-right: 1rem;
 }
+a.post-container:hover * {
+    color: #00cf6b
+}
+
+/* SPECIFIC POST */
+.post-page-container    {
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f9fa;
+    padding: 3%;
+    border: 1px solid #c1c1c1;
+}
+.post-page-title {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 0.25em;
+}
+.post-page-misc {
+    padding-left: 0.5%;
+    padding-right: 0.5%;
+}
+
+
+/* CREATE POST */

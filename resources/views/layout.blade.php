@@ -21,16 +21,18 @@
     </head>
     <body class="antialiased">
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top justify-content-between">
-            <div class="navbar-brand col-1">
+            <div class="navbar-brand col-2">
                 <a href="/"><img src="{{ asset('images/logo.png') }}" alt="Ribbit Logo"></a>
             </div>
-            <div class="col-1">
+            <div class="col-2 row justify-content-end">
                 <a href="/create-post">Create Post</a>
             </div>
         </nav>
     </body>
 
     <main>
-        @yield('content')
+        <div class="content-container">
+            @yield('content')
+        </div>
     </main>
 </html>
