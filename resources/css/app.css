@@ -89,7 +89,7 @@ a.post-container:hover * {
     color: #00cf6b
 }
 
-/* SPECIFIC POST */
+/* SPECIFIC POST VIEW */
 .post-page-container    {
     display: flex;
     flex-direction: column;
@@ -105,6 +105,18 @@ a.post-container:hover * {
 .post-page-misc {
     padding-left: 0.5%;
     padding-right: 0.5%;
+}
+.post-text  {
+    margin: auto 10px auto 10px;
+}
+.post-actions   {
+    margin: initial;
+}
+.post-actions * {
+    margin-left: 1.25%;
+}
+.post-actions button  {
+    width: 100px;
 }
 
 
@@ -132,5 +144,4 @@ a.post-container:hover * {
     width: 20%;
     font-size: larger;
     font-weight: bolder;
-    border-radius: 5rem;
 }

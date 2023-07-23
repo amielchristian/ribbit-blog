@@ -21,11 +21,14 @@
         <div class="post-text">
             <p>{!! nl2br($post->content) !!}</p>
         </div>
-        <br><hr>
-        <form action="{{ route('deletePost', ['post_id' => $post->id]) }}" method="post">
-            @csrf
-            @method('delete')
-            <input type="submit" value="Delete"></input>
-        </form>
+        <br><hr><br>
+        <div class="row justify-content-end post-actions">
+            <button class="btn custom-button" onclick="window.location.href='{{ route('updatePost', ['post_id' => $post->id]) }}'">Update</button>
+            <form action="{{ route('deletePost', ['post_id' => $post->id]) }}" method="post">
+                @csrf
+                @method('delete')
+                <button class="btn custom-button" type="submit" value="Delete">Delete</button>
+            </form>
+        </div>
     </div>
 @endsection
