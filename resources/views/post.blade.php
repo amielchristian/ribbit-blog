@@ -1,5 +1,9 @@
 @extends("layout")
 
+@if ($post == null)
+    {{ abort(404); }}
+@endif
+
 @section("title")
     {{ $post->title }}
 @endsection
