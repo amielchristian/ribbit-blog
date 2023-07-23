@@ -19,11 +19,13 @@
         </div>
         <br><hr><br>
         <div class="post-text">
-            <p>{!! nl2br($post->content) !!}</p>
+            @markdown
+{{ $post->content }}
+            @endmarkdown
         </div>
         <br><hr><br>
         <div class="row justify-content-end post-actions">
-            <button class="btn custom-button" onclick="window.location.href='{{ route('updatePost', ['post_id' => $post->id]) }}'">Update</button>
+            <button class="btn custom-button" onclick="window.location.href='{{ route('updatePost', ['post_id' => $post->id]) }}'">Edit</button>
             <form action="{{ route('deletePost', ['post_id' => $post->id]) }}" method="post">
                 @csrf
                 @method('delete')

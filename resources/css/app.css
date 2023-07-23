@@ -109,6 +109,9 @@ a.post-container:hover * {
 .post-text  {
     margin: auto 10px auto 10px;
 }
+.post-text > *  {
+    margin-bottom: 2%;
+}
 .post-actions   {
     margin: initial;
 }
@@ -137,11 +140,21 @@ a.post-container:hover * {
     outline: #c1c1c1 auto 1px;
 }
 .post-form > textarea   {
+    margin-top: 0;
     height: 400px;
-    resize: none;
+    resize: vertical;
 }
 .post-form > div > button   {
     width: 20%;
     font-size: larger;
     font-weight: bolder;
+}
+.md-tip {
+    font-size: smaller;
+    color: #66757f;
+    margin: 0px 0px 0px 10px;
+}
+.md-tip a {
+    text-decoration: underline;
+    color: lightseagreen;
 }
