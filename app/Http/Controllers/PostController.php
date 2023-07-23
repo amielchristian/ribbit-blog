@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+Use \Carbon\Carbon;
 
 class PostController extends Controller
 {
@@ -14,9 +15,10 @@ class PostController extends Controller
 
     public function store(Request $request) {
         $request->validate(["title" => "required|max:64", "author" => "required|max:64", "content" => "required"]);
-        Task::create(["title" => $request->title, "author" => $request->author, "content" => $request->content]);
+        $post = Post::create(["title" => $request->title, "author" => $request->author, "content" => $request->content]);
+        $postID = $post->id;
 
-        return redirect()->route("index");
+        return redirect()->route("specificPost", $postID);
     }
 
     public function destroy(Task $task) {

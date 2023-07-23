@@ -19,7 +19,7 @@
         </div>
         <br><hr><br>
         <div class="post-text">
-            <p>{{ $post->content }}</p>
+            <p>{!! nl2br($post->content) !!}</p>
         </div>
     </div>
 @endsection

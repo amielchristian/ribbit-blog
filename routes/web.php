@@ -16,10 +16,10 @@ use App\Http\Controllers\PostController;
 
 Route::get('/welcome', function () {
     return view('welcome');
-});
+})->name('welcome');
 Route::get('/', [PostController::class, 'index'])->name('index');
 Route::get('create-post', function () {
     return view('create-post');
-});
-Route::get('post/{postID}', [PostController::class, 'specificPost']);
-Route::get('post/{postID}', [PostController::class, 'specificPost']);
+})->name('create-post');
+Route::get('post/{post_id}', [PostController::class, 'specificPost'])->name('specificPost');
+Route::post('create', [PostController::class, 'store'])->name('store');

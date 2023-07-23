@@ -27,6 +27,15 @@
 .navcontainer   {
     text-align: right;
 }
+.custom-button  {
+    background-color: #00cf6b;
+    color: white;
+    border-color: #66757f;
+}
+.custom-button:hover    {
+    background-color: #00b15c;
+    border-color: #66757f;
+}
 body    {
     background-color: #e2eee2;
     font-family: Figtree, sans-serif;
@@ -100,3 +109,28 @@ a.post-container:hover * {
 
 
 /* CREATE POST */
+.editor-container   {
+    background-color: white;
+    padding-top: 5%;
+}
+.post-form  {
+    display: flex;
+    flex-direction: column;
+}
+.post-form > *  {
+    margin: 0.5em;
+}
+.post-form > input, textarea  {
+    padding: 0.5em;
+    outline: #c1c1c1 auto 1px;
+}
+.post-form > textarea   {
+    height: 400px;
+    resize: none;
+}
+.post-form > div > button   {
+    width: 20%;
+    font-size: larger;
+    font-weight: bolder;
+    border-radius: 5rem;
+}

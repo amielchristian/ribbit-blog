@@ -25,7 +25,7 @@
                 <a href="/"><img src="{{ asset('images/logo.png') }}" alt="Ribbit Logo"></a>
             </div>
             <div class="col-2 row justify-content-end">
-                <a href="/create-post">Create Post</a>
+                <button class="btn custom-button" onclick="window.location.href='{{ route('create-post') }}'">Create Post</button>
             </div>
         </nav>
     </body>
