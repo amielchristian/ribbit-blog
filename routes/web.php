@@ -18,12 +18,15 @@ Route::get('/welcome', function () {
     return view('welcome');
 })->name('welcome');
 Route::get('/', [PostController::class, 'index'])->name('index');
-Route::get('post/{post_id}', [PostController::class, 'showPost'])->name('showPost');
+Route::get('posts', [PostController::class, 'index'])->name('index');
+Route::get('posts/{post_id}', [PostController::class, 'showPost'])->name('showPost');
 
 Route::get('create-post', function () {
     return view('create-post');
 })->name('create-post');
 Route::post('create', [PostController::class, 'store'])->name('store');
 
-Route::get('post/{post_id}/update', [PostController::class, 'updatePost'])->name('updatePost');
+Route::get('posts/{post_id}/update', [PostController::class, 'updatePost'])->name('updatePost');
 Route::post('update', [PostController::class, 'update'])->name('update');
+
+Route::delete('posts/{post_id}/update', [TaskController::class, 'destroy'])->name('tasks.destroy');

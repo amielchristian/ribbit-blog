@@ -6,7 +6,7 @@
 @section("content")
 <div class="post-grid">
     @foreach ($posts as $post)
-        <a href="/post/{{ $post->id }}" class="post-container">
+        <a href="/posts/{{ $post->id }}" class="post-container">
             <div>
                 <h1 class="post-title">{{ $post->title }}</h1>
                 <div class="post-misc">
