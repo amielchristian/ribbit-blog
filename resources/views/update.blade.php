@@ -12,7 +12,7 @@
             <input name="id" type="hidden" value="{{ $post->id }}"></input>
             <input name="title" type="text" placeholder="Title" value="{{ $post->title}}"></input>
             <input name="author" type="text" placeholder="Author" value="{{ $post->author}}" disabled></input>
-            <p class="md-tip">tip: this text editor uses the Markdown markup language – <a href="https://www.markdownguide.org/">click here</a> to learn more!</p>
+            <p class="tip md-tip">tip: this text editor uses the Markdown markup language – <a href="https://www.markdownguide.org/">click here</a> to learn more!</p>
             <textarea name="content" placeholder="Your thoughts go here">{{ $post->content}}</textarea>
             <div class="row justify-content-center">
                 <button class="btn custom-button" type="submit">Update</button>

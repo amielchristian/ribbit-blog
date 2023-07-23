@@ -149,12 +149,18 @@ a.post-container:hover * {
     font-size: larger;
     font-weight: bolder;
 }
-.md-tip {
+.tip    {
     font-size: smaller;
     color: #66757f;
+}
+.md-tip {
     margin: 0px 0px 0px 10px;
 }
 .md-tip a {
     text-decoration: underline;
     color: lightseagreen;
+}
+.session-tip    {
+    width: 20%;
+    text-align: center;
 }
