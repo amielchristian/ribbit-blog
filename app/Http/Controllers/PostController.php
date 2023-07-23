@@ -31,8 +31,8 @@ class PostController extends Controller
         return redirect()->route("showPost", $postID);
     }
 
-    public function destroy(Task $task) {
-        $task -> delete();
+    public function destroy($postID) {
+        Post::latest()->where('id', $postID)->first() -> delete();
         return redirect() -> route("index");
     }
 

@@ -29,4 +29,4 @@ Route::post('create', [PostController::class, 'store'])->name('store');
 Route::get('posts/{post_id}/update', [PostController::class, 'updatePost'])->name('updatePost');
 Route::post('update', [PostController::class, 'update'])->name('update');
 
-Route::delete('posts/{post_id}/update', [PostController::class, 'destroy'])->name('deletePost');
+Route::delete('posts/{post_id}/destroy', [PostController::class, 'destroy'])->name('deletePost');

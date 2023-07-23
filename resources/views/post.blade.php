@@ -21,5 +21,11 @@
         <div class="post-text">
             <p>{!! nl2br($post->content) !!}</p>
         </div>
+        <br><hr>
+        <form action="{{ route('deletePost', ['post_id' => $post->id]) }}" method="post">
+            @csrf
+            @method('delete')
+            <input type="submit" value="Delete"></input>
+        </form>
     </div>
 @endsection
