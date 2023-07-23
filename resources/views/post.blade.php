@@ -25,6 +25,10 @@
         </div>
         <br><hr><br>
         <div class="row justify-content-end post-actions">
+            <form action="{{ route('downloadPost', ['post_id' => $post->id]) }}">
+                <input type="hidden" name="id" value="{{ $post->id }}"></input>
+                <button class="btn custom-button">Download</button>
+            </form>
             <button class="btn custom-button" onclick="window.location.href='{{ route('updatePost', ['post_id' => $post->id]) }}'">Edit</button>
             <form action="{{ route('deletePost', ['post_id' => $post->id]) }}" method="post">
                 @csrf

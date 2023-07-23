@@ -20,6 +20,7 @@ Route::get('/welcome', function () {
 Route::get('/', [PostController::class, 'index'])->name('index');
 Route::get('posts', [PostController::class, 'index'])->name('index');
 Route::get('posts/{post_id}', [PostController::class, 'showPost'])->name('showPost');
+Route::get('posts/{post_id}/download', [PostController::class, 'downloadPost'])->name('downloadPost');
 
 Route::get('create-post', function () {
     return view('create-post');

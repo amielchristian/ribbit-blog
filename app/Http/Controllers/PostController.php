@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
-Use \Carbon\Carbon;
+use \Carbon\Carbon;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\File;
 
 class PostController extends Controller
 {
@@ -43,5 +45,16 @@ class PostController extends Controller
     public function updatePost($postID)   {
         $post = Post::latest()->where('id', $postID)->first();
         return view('update', compact('post'));
+    }
+
+    public function downloadPost(Request $request)  {
+        $post = Post::where('id', $request->id)->first();
+        $title = $post->title;
+        $content = $post->content;
+        
+        $filePath = $title.'.md';
+        Storage::disk('local')->put($filePath, $content);
+
+        return response()->download(storage_path('app/'.$filePath));
     }
 }
