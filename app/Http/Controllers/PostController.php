@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use \Carbon\Carbon;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\File;
+use Illuminate\Support\Facades\Session;
 
 class PostController extends Controller
 {
@@ -17,7 +18,7 @@ class PostController extends Controller
 
     public function store(Request $request) {
         $request->validate(["title" => "required|max:64", "author" => "required|max:64", "content" => "required"]);
-        $post = Post::create(["title" => $request->title, "author" => $request->author, "content" => $request->content]);
+        $post = Post::create(["title" => $request->title, "author" => $request->author, "session_id" => Session::getId(), "content" => $request->content]);
         $postID = $post->id;
 
         return redirect()->route("showPost", $postID);

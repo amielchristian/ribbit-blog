@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
-    protected $fillable = ['title','author','content'];
+    protected $fillable = ['title','author','content', 'session_id'];
 
     protected static function booted(): void    {
         static::creating(function (self $model) {
