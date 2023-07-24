@@ -5,7 +5,7 @@
 @endif
 
 @section("title")
-    Create Post
+    Edit Post
 @endsection
 
 @section("content")
