@@ -53,9 +53,10 @@ class PostController extends Controller
         $title = $post->title;
         $content = $post->content;
         
-        $filePath = $title.'.md';
-        Storage::disk('local')->put($filePath, $content);
+        $filename = $title.'.md';
 
-        return response()->download(storage_path('app/'.$filePath));
+        return response()->streamDownload(function() use ($content) {
+            echo $content;
+        }, $filename);
     }
 }
