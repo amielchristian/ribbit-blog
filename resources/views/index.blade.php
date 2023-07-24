@@ -6,7 +6,7 @@
 @section("content")
 <div class="post-grid">
     @foreach ($posts as $post)
-        <a href="{{route('showPost', ['post_id' => $post->id])}}" class="post-container">
+        <a href="{{route('showPost', ['post_id' => $post->id])}}" class="post-container motion-safe:hover:scale-[1.01]">
             <div>
                 <h1 class="post-title">{{ $post->title }}</h1>
                 <div class="post-misc">
