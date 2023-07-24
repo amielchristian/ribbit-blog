@@ -60,7 +60,7 @@ class PostController extends Controller
     public function downloadPost(Request $request)  {
         $post = Post::where('id', $request->id)->first();
         $title = $post->title;
-        $content = $post->content;
+        $content = ("# ".$post->title."\n").("## by ".$post->author."\n\n").$post->content;
         
         $filename = $title.'.md';
 
