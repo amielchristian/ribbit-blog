@@ -202,3 +202,34 @@ a.post-container:hover * {
     width: 20%;
     text-align: center;
 }
+
+/* ERROR */
+.error-container    {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #f8f9fa;
+    padding: 2em;
+    border: 1px solid #c1c1c1;
+    border-radius: 10px;
+    width: 50em;
+}
+.error-container:hover  {
+    color: initial;
+    text-decoration: initial;
+}
+.error-message {
+    font-weight: 800;
+    font-size: 5.5em;
+}
+.error-text {
+    color: #00cf6b;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 60%;
+}
+.error-icon-display {
+    width: 40%;
+    transform: rotate(180deg);
+}
