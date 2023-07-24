@@ -42,5 +42,32 @@
                 </form>
             @endif
         </div>
+        <div>
+            <h5 class='comments-header'>Comments</h5>
+            <form method='post' action='{{ route("comment") }}'>
+                @csrf
+                <input type="hidden" name="id" value="{{ $post->id }}"></input>
+                <div class='comment-container'>
+                    <textarea required name="content" placeholder="Your thoughts go here" class='write-comment'></textarea>
+                    <div class="row justify-content-end comment-actions">
+                        <div class="d-flex flex-row align-items-center">
+                            <p>Commenting as&nbsp;</p>
+                            <input required class="comment-author" maxlength="64" type="text" name="author" value="Guest" placeholder="Author"></input>
+                        </div>
+                        <button class="btn custom-button" type="submit">Comment</button>
+                    </div>
+                </div>
+            </form>
+
+            @foreach ($comments as $comment)
+                <div class="comment-container">
+                    <div class='comment-info'>
+                        <b><p>{{ $comment->author }}</p></b>
+                        <p class='post-misc'>{{ date_format($comment->created_at, "M d, Y h:i A") }} UTC</p>
+                    </div>
+                    <p class='comment-contents'>{{ $comment->content }}</p>
+                </div>
+            @endforeach
+        </div>
     </div>
 @endsection

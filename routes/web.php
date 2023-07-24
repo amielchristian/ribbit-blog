@@ -27,6 +27,8 @@ Route::get('create-post', function () {
 })->name('create-post');
 Route::post('create', [PostController::class, 'store'])->name('store');
 
+Route::post('comment', [PostController::class, 'comment'])->name('comment');
+
 Route::get('posts/{post_id}/update', [PostController::class, 'updatePost'])->name('updatePost');
 Route::post('update', [PostController::class, 'update'])->name('update');
 

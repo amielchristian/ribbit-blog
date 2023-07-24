@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 use \Carbon\Carbon;
 use Illuminate\Support\Facades\Storage;
@@ -24,6 +25,13 @@ class PostController extends Controller
         return redirect()->route("showPost", $postID);
     }
 
+    public function comment(Request $request)   {
+        $request->validate(["author" => "required|max:64", "content" => "required"]);
+        $post = Comment::create(["post_id" => $request->id, "author" => $request->author, "content" => $request->content]);
+
+        return redirect()->route("showPost", $request->id);
+    }
+
     public function update(Request $request)    {
         $currentTime = Carbon::now();
 
@@ -41,7 +49,8 @@ class PostController extends Controller
 
     public function showPost($postID)   {
         $post = Post::latest()->where('id', $postID)->first();
-        return view('post', compact('post'));
+        $comments = Comment::latest()->where('post_id', $postID)->get();
+        return view('post', compact('post', 'comments'));
     }
     public function updatePost($postID)   {
         $post = Post::latest()->where('id', $postID)->first();

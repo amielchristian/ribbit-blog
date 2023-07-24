@@ -127,6 +127,43 @@ a.post-container:hover * {
 .post-actions button  {
     width: 100px;
 }
+.comments-header {
+    font-weight: bold;
+    margin-bottom: 0.25em;
+}
+.comment-container  {
+    border: 1px solid #c1c1c1;
+    border-radius: 0.5em;
+    background-color: #fffffa;
+    overflow: hidden;
+    margin-bottom: 0.5em;
+}
+.comment-info   {
+    padding: 0.25em 0.5em;
+    background-color: #e2eee2;
+    border-bottom: 1px solid #c1c1c1;
+}
+.comment-contents    {
+    margin: 1em 1em 1.75em 1.75em;
+}
+.write-comment  {
+    background-color: #fffffa;
+    border-bottom: 1px solid #c1c1c1;
+    outline: 0;
+    width: 100%;
+    height: 7.5em;
+    resize: vertical;
+}
+.comment-author {
+    border-bottom: solid #c1c1c1 1px;
+}
+.comment-actions    {
+    margin: 0.5em;
+    margin-top: 0;
+}
+.comment-actions > *    {
+    margin-left: 1em;
+}
 
 
 /* CREATE POST */
