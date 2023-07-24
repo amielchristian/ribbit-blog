@@ -9,7 +9,7 @@
 @endsection
 
 @section("content")
-    <div class="post-page-container">
+    <div class="post-page-container editor-container">
         <h1 class="post-page-title">Edit Post</h1>
         <form class="post-form" action="{{ route('update') }}" method="post">
             @csrf

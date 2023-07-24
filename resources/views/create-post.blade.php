@@ -5,7 +5,7 @@
 @endsection
 
 @section("content")
-    <div class="post-page-container">
+    <div class="post-page-container editor-container">
         <h1 class="post-page-title">What's on your mind?</h1>
         <form class="post-form" action="{{ route('store') }}" method="post">
             @csrf
